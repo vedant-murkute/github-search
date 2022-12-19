@@ -1,6 +1,6 @@
-# Github Repo Search APP
+# Github Repo Search App
 
-A react to search for public repositories using Github REST API. There is also a feature to sort the search results based on stars, score, watchers etc. 
+A react application to search for public repositories using Github REST API. There is also a feature to sort the search results based on stars, score, watchers etc. 
 
 Run the project using:
 
