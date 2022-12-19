@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./SearchBar.css";
 
 export const SearchBar = ({getSearchResults, isLoading, searchQuery, setSearchQuery, setSortOption}) => {
   const handleChange = (event) => {
@@ -19,8 +20,9 @@ export const SearchBar = ({getSearchResults, isLoading, searchQuery, setSearchQu
           name="search string"
           value={searchQuery}
           onChange={handleChange}
+          className="search-input"
         />
-        <input type="submit" value="Submit val" disabled={isLoading} />
+        <input className="search-btn" type="submit" value="Search Repo" disabled={isLoading} />
       </form>
     </div>
   );

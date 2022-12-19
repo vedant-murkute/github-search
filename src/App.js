@@ -19,8 +19,7 @@ function App() {
   const fetchData = async (searchQuery) => {
     setData(null);
     setIsLoading(true);
-    const token =
-      "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";
+    const token = process.env.REACT_APP_API_TOKEN;  //this is still visible via inspect, confidential keys still should be in the backend or use Next
     const octokit = new Octokit({
       auth: token,
     });
@@ -54,6 +53,7 @@ function App() {
     );
   };
 
+  //this prop drilling can be avoided by shifting state to child or using composition. Although there are tradeoffs.
   return (
     <div className="App">
       <SearchBar

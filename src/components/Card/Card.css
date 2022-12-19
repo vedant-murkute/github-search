@@ -1,3 +1,20 @@
+.card{
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
 .avatar-image{
-  width: 5rem;
+  width: 8rem;
+  object-fit: contain;
+  
+}
+
+.desc{
+  margin-bottom: 0;
+}
+
+.card-footer{
+  display: flex;
+  gap: 2rem;
 }

@@ -1,10 +1,11 @@
 import { useState } from "react";
+import "./ResultsHeader.css"
 
-const ResultsHeader = ({ setSortOption, setSortOrder, handleSort }) => {
+const ResultsHeader = ({ setSortOption, setSortOrder, handleSort, data }) => {
   const [showSortOptions, setShowSortOptions] = useState(false);
 
   const handleShowClick = (event) => {
-    setShowSortOptions(true);
+    setShowSortOptions(!showSortOptions);
     console.log(event);
   };
 
@@ -16,11 +17,12 @@ const ResultsHeader = ({ setSortOption, setSortOrder, handleSort }) => {
   };
 
   return (
-    <div>
-      <button name="sort button" type="button" onClick={handleShowClick}>
-        {`Sort: $sort type`}
+    <div className="header">
+      <h1>{`Showing ${data.total_count} repos`}</h1>
+      <button className="sort-button" name="sort button" type="button" onClick={handleShowClick}>
+        {`Sort By`}
       </button>
-      {showSortOptions && <div>
+      {showSortOptions && <div className="sort-options">
         <button
           name="best_match"
           type="button"

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import ResultsHeader from "../ResultsHeader/ResultsHeader";
 import { optionsMapping } from "../../constants/options";
+import "./Results.css"
 
 const Results = ({
   data,
@@ -75,7 +76,7 @@ const Results = ({
   }, [sortOrder, sortOption]);
 
   return (
-    <div>
+    <div className="results">
       {isLoading ? (
         <h1>Loading...</h1>
       ) : (
@@ -84,6 +85,7 @@ const Results = ({
             <ResultsHeader
               setSortOption={setSortOption}
               setSortOrder={setSortOrder}
+              data={data}
               // handleSort={handleSort}
             />
           )}

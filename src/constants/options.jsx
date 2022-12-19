@@ -4,6 +4,6 @@ export const optionsMapping = {
   updated_at: "updated",
   watchers: "watchers_count",
   score: "score",
-  name: "full_name",
+  name: "name",
   created_at: "created_at",
 };
