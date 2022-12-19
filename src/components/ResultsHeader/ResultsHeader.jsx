@@ -38,6 +38,13 @@ const ResultsHeader = ({ setSortOption, setSortOrder, handleSort, data }) => {
           Most Stars
         </button>
         <button
+          name="stars"
+          type="button"
+          onClick={(event) => handleSortClick(event, "asc")}
+        >
+          Least Stars
+        </button>
+        <button
           name="updated_at"
           type="button"
           onClick={(event) => handleSortClick(event, "desc")}
@@ -50,6 +57,13 @@ const ResultsHeader = ({ setSortOption, setSortOrder, handleSort, data }) => {
           onClick={(event) => handleSortClick(event, "desc")}
         >
           Most Watchers Count
+        </button>
+        <button
+          name="watchers"
+          type="button"
+          onClick={(event) => handleSortClick(event, "asc")}
+        >
+          Least Watchers Count
         </button>
         <button
           name="score"

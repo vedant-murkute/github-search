@@ -22,7 +22,7 @@ export const SearchBar = ({getSearchResults, isLoading, searchQuery, setSearchQu
           onChange={handleChange}
           className="search-input"
         />
-        <input className="search-btn" type="submit" value="Search Repo" disabled={isLoading} />
+        <input className="search-btn" type="submit" value="Search Repos" disabled={isLoading} />
       </form>
     </div>
   );

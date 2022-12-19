@@ -19,7 +19,7 @@ function App() {
   const fetchData = async (searchQuery) => {
     setData(null);
     setIsLoading(true);
-    const token = process.env.REACT_APP_API_TOKEN;  //this is still visible via inspect, confidential keys still should be in the backend or use Next
+    const token = process.env.REACT_APP_API_TOKEN;  //this is still visible via inspect, confidential keys should be in the backend or use Next
     const octokit = new Octokit({
       auth: token,
     });

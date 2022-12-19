@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 import Card from "../Card/Card";
 import ResultsHeader from "../ResultsHeader/ResultsHeader";
-import { optionsMapping } from "../../constants/options";
 import "./Results.css"
+import { sortArray } from "../../utils";
 
 const Results = ({
   data,
@@ -36,40 +36,8 @@ const Results = ({
       getSearchResults(searchQuery);
     } else {
       let temp = [...bestMatchItems];
-      console.log(optionsMapping[sortOption]);
-      if (sortOrder === "asc") {
-        temp.sort(
-          (a, b) =>{
-            if(sortOption==="created_at"){
-              const date_a = new Date(a[optionsMapping[sortOption]]);
-              const date_b = new Date(b[optionsMapping[sortOption]]);
-              return date_a - date_b;
-            }
-            else if(setSortOption==="name"){
-              return a[optionsMapping[sortOption]].localeCompare(b[optionsMapping[sortOption]]);
-            }
-            else{
-              return a[optionsMapping[sortOption]] - b[optionsMapping[sortOption]];
-            }
-          }
-        );
-      } else {
-        temp.sort(
-          (a, b) =>{
-            if(sortOption==="created_at"){
-              const date_a = new Date(a[optionsMapping[sortOption]]);
-              const date_b = new Date(b[optionsMapping[sortOption]]);
-              return date_b - date_a;
-            }
-            else if(setSortOption==="name"){
-              return a[optionsMapping[sortOption]].localeCompare(b[optionsMapping[sortOption]]);
-            }
-            else{
-              return b[optionsMapping[sortOption]] - a[optionsMapping[sortOption]];
-            }
-          }
-        );
-      }
+      // console.log(optionsMapping[sortOption]);
+      temp = sortArray(temp,sortOption,sortOrder);
       setItems(temp);
       console.log(items);
     }

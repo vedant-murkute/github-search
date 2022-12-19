@@ -9,7 +9,7 @@ const Card = ({ repo }) => {
         alt="img of repo owner"
       ></img>
       <div className="card-content">
-        <p>{repo.full_name}</p>
+        <p className="repo-name">{repo.full_name}</p>
         <p className="desc">{repo.description}</p>
         <div className="card-footer">
           <p>{`Stars: ${repo.stargazers_count}`}</p>
@@ -18,8 +18,8 @@ const Card = ({ repo }) => {
       </div>
 
       {/* <p>{`Watchers: ${repo.watchers_count}`}</p>
-      <p>{`Score: ${repo.score}`}</p>
-      <p>{`created: ${repo.created_at}`}</p> */}
+      <p>{`Score: ${repo.score}`}</p> */}
+      {/* <p>{`created: ${repo.created_at}`}</p> */}
     </div>
   );
 };
